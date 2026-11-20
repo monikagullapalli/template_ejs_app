@@ -13,6 +13,8 @@ import connectDB from "./config/db.js";
 
 dotenv.config();
 await connectDB(process.env.MONGO_URI, process.env.DB_NAME);
+console.log("Mongo URI host:", new URL(process.env.MONGO_URI).host);
+console.log("Database name:", process.env.DB_NAME);
 const app = express();
 app.use(express.json());
 
